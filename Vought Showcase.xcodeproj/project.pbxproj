@@ -28,6 +28,10 @@
 		5E87DC912C6232440005D86C /* Vought_ShowcaseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E87DC902C6232440005D86C /* Vought_ShowcaseUITestsLaunchTests.swift */; };
 		5E87DCA02C6236A30005D86C /* CarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E87DC9F2C6236A30005D86C /* CarouselViewController.swift */; };
 		5E87DCA22C62375E0005D86C /* CarouselViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E87DCA12C62375E0005D86C /* CarouselViewController.xib */; };
+		6ACE28A32C7DB45100B3B77D /* ButcherCarouselItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACE28A22C7DB45100B3B77D /* ButcherCarouselItem.swift */; };
+		6ACE28A52C7DB48A00B3B77D /* FrenchieCarouselItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACE28A42C7DB48A00B3B77D /* FrenchieCarouselItem.swift */; };
+		6ACE28A92C7DB54000B3B77D /* HugheiCarouselItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACE28A82C7DB54000B3B77D /* HugheiCarouselItem.swift */; };
+		6ACE28AB2C7DB55500B3B77D /* MmCarouselItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACE28AA2C7DB55500B3B77D /* MmCarouselItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +77,10 @@
 		5E87DC902C6232440005D86C /* Vought_ShowcaseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vought_ShowcaseUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5E87DC9F2C6236A30005D86C /* CarouselViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselViewController.swift; sourceTree = "<group>"; };
 		5E87DCA12C62375E0005D86C /* CarouselViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarouselViewController.xib; sourceTree = "<group>"; };
+		6ACE28A22C7DB45100B3B77D /* ButcherCarouselItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButcherCarouselItem.swift; sourceTree = "<group>"; };
+		6ACE28A42C7DB48A00B3B77D /* FrenchieCarouselItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrenchieCarouselItem.swift; sourceTree = "<group>"; };
+		6ACE28A82C7DB54000B3B77D /* HugheiCarouselItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HugheiCarouselItem.swift; sourceTree = "<group>"; };
+		6ACE28AA2C7DB55500B3B77D /* MmCarouselItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MmCarouselItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +121,7 @@
 			children = (
 				5E1E354D2C624C16000D7DEF /* CarouselItemProvider */,
 				5E1E354C2C624C0A000D7DEF /* Core */,
+				6ACE289F2C7DB41600B3B77D /* NewCarouselItems */,
 				5E1E354B2C624BF4000D7DEF /* CarouselItems */,
 			);
 			path = Carousel;
@@ -217,6 +226,17 @@
 				5E1E353E2C6247C5000D7DEF /* ImageViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		6ACE289F2C7DB41600B3B77D /* NewCarouselItems */ = {
+			isa = PBXGroup;
+			children = (
+				6ACE28A22C7DB45100B3B77D /* ButcherCarouselItem.swift */,
+				6ACE28A42C7DB48A00B3B77D /* FrenchieCarouselItem.swift */,
+				6ACE28A82C7DB54000B3B77D /* HugheiCarouselItem.swift */,
+				6ACE28AA2C7DB55500B3B77D /* MmCarouselItem.swift */,
+			);
+			path = NewCarouselItems;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,6 +373,7 @@
 			files = (
 				5E1E35442C62497D000D7DEF /* HomeLanderCarouselItem.swift in Sources */,
 				5E87DCA02C6236A30005D86C /* CarouselViewController.swift in Sources */,
+				6ACE28A52C7DB48A00B3B77D /* FrenchieCarouselItem.swift in Sources */,
 				5E87DC722C6232430005D86C /* MainViewController.swift in Sources */,
 				5E1E35482C624B31000D7DEF /* BlackNoirCarouselItem.swift in Sources */,
 				5E1E354A2C624BAB000D7DEF /* ATrainCarouselItem.swift in Sources */,
@@ -364,7 +385,10 @@
 				5E1E35422C6248A6000D7DEF /* CarouselItem.swift in Sources */,
 				5E1E353F2C6247C5000D7DEF /* ImageViewController.swift in Sources */,
 				5E87DC702C6232430005D86C /* SceneDelegate.swift in Sources */,
+				6ACE28A92C7DB54000B3B77D /* HugheiCarouselItem.swift in Sources */,
 				5E1E35572C634D75000D7DEF /* SegmentedProgressBar.swift in Sources */,
+				6ACE28A32C7DB45100B3B77D /* ButcherCarouselItem.swift in Sources */,
+				6ACE28AB2C7DB55500B3B77D /* MmCarouselItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,9 +568,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3RP3B498TD;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Vought Showcase/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -561,6 +586,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sample.Vought-Showcase";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -572,9 +598,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3RP3B498TD;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Vought Showcase/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -589,6 +616,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sample.Vought-Showcase";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
