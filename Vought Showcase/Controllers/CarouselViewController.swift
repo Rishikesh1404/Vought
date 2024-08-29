@@ -131,26 +131,31 @@ final class CarouselViewController: UIViewController, SegmentedProgressBarDelega
     }
     
     func segmentedProgressBarFinished() {
-        if !isAnimationHandling {
-            isAnimationHandling = true
+        
+        if currentItemIndex < items.count - 1 {
             showNextMember()
+        } else {
+            
         }
     }
     
     @objc private func showNextMember() {
-        let nextIndex = (currentItemIndex + 1) % items.count
+        if currentItemIndex < items.count - 1 {
+            currentItemIndex += 1
         let direction: UIPageViewController.NavigationDirection = .forward
-        pageViewController?.setViewControllers([viewControllerForPage(at: nextIndex)], direction: direction, animated: true)
-        currentItemIndex = nextIndex
+        pageViewController?.setViewControllers([viewControllerForPage(at: currentItemIndex)], direction: direction, animated: true)
         segmentedProgressBar?.skip()
+    }
     }
     
     @objc private func showPreviousMember() {
-        let previousIndex = (currentItemIndex - 1 + items.count) % items.count
-        let direction: UIPageViewController.NavigationDirection = .reverse
-        pageViewController?.setViewControllers([viewControllerForPage(at: previousIndex)], direction: direction, animated: true)
-        currentItemIndex = previousIndex
-        segmentedProgressBar?.rewind()
+        if currentItemIndex > 0 {
+            let previousIndex = (currentItemIndex - 1 + items.count) % items.count
+            let direction: UIPageViewController.NavigationDirection = .reverse
+            pageViewController?.setViewControllers([viewControllerForPage(at: previousIndex)], direction: direction, animated: true)
+            currentItemIndex = previousIndex
+            segmentedProgressBar?.rewind()
+        }
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -170,7 +175,6 @@ extension CarouselViewController: UIPageViewControllerDelegate {
         let previousIndex = (index - 1 + items.count) % items.count
         return viewControllerForPage(at: previousIndex)
     }
-
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         guard let index = items.firstIndex(where: { $0.getController() == viewController }) else {
             return nil
