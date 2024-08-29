@@ -138,12 +138,18 @@ final class CarouselViewController: UIViewController, SegmentedProgressBarDelega
     }
     
     @objc private func showNextMember() {
-        currentItemIndex = (currentItemIndex + 1) % items.count
+        let nextIndex = (currentItemIndex + 1) % items.count
+        let direction: UIPageViewController.NavigationDirection = .forward
+        pageViewController?.setViewControllers([viewControllerForPage(at: nextIndex)], direction: direction, animated: true)
+        currentItemIndex = nextIndex
         segmentedProgressBar?.skip()
     }
     
     @objc private func showPreviousMember() {
-        currentItemIndex = (currentItemIndex - 1 + items.count) % items.count
+        let previousIndex = (currentItemIndex - 1 + items.count) % items.count
+        let direction: UIPageViewController.NavigationDirection = .reverse
+        pageViewController?.setViewControllers([viewControllerForPage(at: previousIndex)], direction: direction, animated: true)
+        currentItemIndex = previousIndex
         segmentedProgressBar?.rewind()
     }
     
@@ -157,6 +163,21 @@ final class CarouselViewController: UIViewController, SegmentedProgressBarDelega
 }
 
 extension CarouselViewController: UIPageViewControllerDelegate {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        guard let index = items.firstIndex(where: { $0.getController() == viewController }) else {
+            return nil
+        }
+        let previousIndex = (index - 1 + items.count) % items.count
+        return viewControllerForPage(at: previousIndex)
+    }
+
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        guard let index = items.firstIndex(where: { $0.getController() == viewController }) else {
+            return nil
+        }
+        let nextIndex = (index + 1) % items.count
+        return viewControllerForPage(at: nextIndex)
+    }
     
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         if completed, let visibleViewController = pageViewController.viewControllers?.first, let index = items.firstIndex(where: { $0.getController() == visibleViewController }) {
