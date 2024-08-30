@@ -141,9 +141,11 @@ final class CarouselViewController: UIViewController, SegmentedProgressBarDelega
     
     @objc private func showNextMember() {
         if currentItemIndex < items.count - 1 {
-            currentItemIndex += 1
+            let nextIndex = (currentItemIndex + 1) % items.count
+            
         let direction: UIPageViewController.NavigationDirection = .forward
-        pageViewController?.setViewControllers([viewControllerForPage(at: currentItemIndex)], direction: direction, animated: true)
+        pageViewController?.setViewControllers([viewControllerForPage(at: nextIndex)], direction: direction, animated: true)
+            currentItemIndex = nextIndex
         segmentedProgressBar?.skip()
     }
     }
