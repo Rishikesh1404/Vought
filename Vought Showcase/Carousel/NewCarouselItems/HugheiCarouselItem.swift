@@ -1,13 +1,13 @@
 //
-//  MaeveCarouselItem.swift
+//  HugheiNewCarouselItem.swift
 //  Vought Showcase
 //
-//  Created by Burhanuddin Rampurawala on 06/08/24.
+//  Created by Rishikesh Reddy on 27/08/24.
 //
 
 import UIKit
 
-final class MaeveCarouselItem: CarouselItem {
+final class HugheiCarouselItem: CarouselItem {
     
     private var viewController: UIViewController?
     
@@ -18,7 +18,7 @@ final class MaeveCarouselItem: CarouselItem {
         // If not, create new view controller
         // else return the existing view controller
         guard let viewController = viewController else {
-        viewController = ImageViewController(imageName: "maeve")
+            viewController = ImageViewController(imageName: "hughei")
             return viewController!
         }
         return viewController
